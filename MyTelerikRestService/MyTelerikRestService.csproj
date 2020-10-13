@@ -46,6 +46,12 @@
     <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -58,6 +64,8 @@
     <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -132,17 +140,421 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Academic_AssessementDetail.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_Assessment.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_AssignAdminstratorForApplicants.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_Calendar.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_Course.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_EnrolStudent.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_EntranceSubject.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_ExamDocket.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_ExamSchedule.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_FeeMaster.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_GradingDetail.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_GradingScheme.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_Intake.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_ManageDiscipline.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_MarkEntry.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_OperatingHours.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_OtherFee.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_PlacementTest.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_PreRequisiteSubject.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_Programme.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_ProgrammeStatutory.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_ProgrammeType.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_RawMark.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_Semester.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_Statutory.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_StudentAttendance.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_StudyIntake.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_StudyMode.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_StudySemester.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_StudyYear.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_StudyYearSemester.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_Subject.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Academic_SubjectManagement.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_AdmissionFee.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_AdmissionInfo.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_Applicant.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ApplicantApplication.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ApplicantEducation.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ApplicantEducationSubject.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ApplicantEnglishProficiency.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ApplicantGuardian.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ApplicantMedicalTest.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ApplicantSupportDocument.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ApplicantTimeline.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_Applicant_LeadSource.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ApplicationStatus.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_Campaign.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_EnglishProficiency.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_Intake.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_KeyEvalutionIndicator.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_Letters.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_MedicalTest.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_ProgrammeSupportingDocument.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_School.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_SiteSetting.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_StudyLevelSubject.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admission_SupportDocument.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Bursary_Apportionment.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary_BankSetting.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary_CreditHour.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary_FeeType.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary_FeeTypeCategory.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary_FinePolicy.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary_Invoice.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary_PackageDetails.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary_PackageSettings.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary_TaxSetting.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\SaveReportController.cs" />
+    <Compile Include="General_Announcement.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Asset.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Bank.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_CampaignVisitor.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Campus.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_City.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Country.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_DeclarationTerms.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Department.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_EmailTemplate.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Facility.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_FacilityType.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Gender.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_GlobalSetup.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_GradeAchieve.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_HolidaySetup.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_IdentityType.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_IncomeRange.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Institute.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_InstituteType.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Language.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_LeadsEducationResult.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Letter.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_LetterTemplate.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_LevelOfStudy.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_ManageDocument.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_ManageSystem.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_MaritalStatus.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_MatricNumber.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_OnlineSupport.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_OperatingHour.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_PersonnelQuestion.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_QualificationLevel.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_QualificationLevelSubject.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Race.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Relationship.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Religion.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_Salutation.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_SocialMedia.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_State.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_StatusEmail.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="General_SystemEmail.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HR_HolidayCalendar.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HR_HolidayTrack.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartCampusDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartCampusDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SmartCampusDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SmartCampusDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SmartCampusDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="UAC_HackAttempt.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UAC_LoginAudit.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UAC_PassReset.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UAC_Role.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UAC_RolePremissionMap.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UAC_RoleUserMap.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Access.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Account.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_ContactAddress.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_ContactEmail.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_ContactNumber.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Credential.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Education.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Employee.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Image.cs">
+      <DependentUpon>SmartCampusDataModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="DashBoardReport.html" />
     <Content Include="Global.asax" />
+    <Content Include="SmartCampusDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SmartCampusDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>SmartCampusDataModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="SmartCampusDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SmartCampusDataModel.edmx</DependentUpon>
+      <LastGenOutput>SmartCampusDataModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -162,6 +574,20 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="SmartCampusDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SmartCampusDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SmartCampusDataModel.edmx.diagram">
+      <DependentUpon>SmartCampusDataModel.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -180,7 +606,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>29240</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:12345</IISUrl>
+          <IISUrl>http://localhost:54321</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:54321/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

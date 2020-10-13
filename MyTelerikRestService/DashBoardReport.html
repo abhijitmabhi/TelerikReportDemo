@@ -27,12 +27,26 @@
 	</style>
 </head>
 <body>
-
-    <div id="reportViewer1">
-        loading...
+    <div class="">
+        <button id="saveReport" class="btn btn-primary">CLick me to call</button>
     </div>
+    <!--<div id="reportViewer1">
+        loading...
+    </div>-->
 
     <script type="text/javascript">
+        $(function () {
+            $('#saveReport').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "SaveReport/SaveReport",
+                    context: document.body
+                }).done(function () {
+                    $(this).addClass("done");
+                    alert("Function clicked");
+                });
+            });
+        });
         $(document).ready(function () {
             $("#reportViewer1")
                 .telerik_ReportViewer({
@@ -40,7 +54,7 @@
                     // The URL of the service which will serve reports.
                     // The URL corresponds to the name of the controller class (ReportsController).
                     // For more information on how to configure the service please check http://www.telerik.com/help/reporting/telerik-reporting-rest-conception.html.
-					serviceUrl: "/api/reports",
+                    serviceUrl: "/api/reports",
 
                     // The URL for custom report viewer template. The template can be edited -
                     // new functionalities can be added and unneeded ones can be removed.
@@ -49,7 +63,7 @@
 
                     //ReportSource - report description
                     reportSource: {
-                        // The report can be set to a report file name (trdx report definition) 
+                        // The report can be set to a report file name (trdx report definition)
                         // or CLR type name (report class definition).
                         report: "Barcodes Report.trdp"
                     },
@@ -69,15 +83,17 @@
                     // Zoom in and out the report using the scale
                     // 1.0 is equal to 100%, i.e. the original size of the report
                     scale: 1.0,
-					enableAccessibility: false,
+                    enableAccessibility: false,
 
-					//If set to true shows the Send Mail Message toolbar button
+                    //If set to true shows the Send Mail Message toolbar button
                     sendEmail: { enabled: false },
 
                     ready: function () {
                         //this.refreshReport();
                     },
                 });
+            console.log($("#reportViewer1").telerik_ReportViewer({}));
+            console.log(telerikReportViewer);
         });
     </script>
 
